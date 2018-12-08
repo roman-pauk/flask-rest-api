@@ -8,9 +8,10 @@ from resources.performer import PerformerList, Performer
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E:\\python-flask-api\\db\\database.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E:\\python-flask-api\\db\\database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['PROPAGATE_EXCEPTIONS'] = True
+# app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
 
 # dbs = SQLAlchemy(app)
