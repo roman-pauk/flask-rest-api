@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Api
+from flask_cors import CORS
 
 from resources.festival import FestivalList, Festival
 from resources.performer import PerformerList, Performer
@@ -9,10 +10,11 @@ app = Flask(__name__)
 
 app.config['DEBUG'] = True
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E:\\python-flask-api\\db\\database.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E:\\python-flask-api\\db\\database.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # app.config['PROPAGATE_EXCEPTIONS'] = True
+CORS(app)
 api = Api(app)
 
 
